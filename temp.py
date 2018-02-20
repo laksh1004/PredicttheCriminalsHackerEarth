@@ -103,7 +103,7 @@ pred = sc.fit_transform(pred)
 #from sklearn.metrics import confusion_matrix
 #cm = confusion_matrix(y_test, y_pred)
 
-
+#
 # Importing the Keras libraries and packages
 import keras
 from keras.models import Sequential
@@ -122,7 +122,7 @@ classifier.add(Dense(output_dim = 50, init = 'uniform', activation = 'relu'))
 classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid'))
 
 # Compiling the ANN
-classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+classifier.compile(optimizer = 'Adagrad', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 # Fitting the ANN to the Training set
 classifier.fit(X_train, y_train, batch_size = 10, nb_epoch = 100)
@@ -136,6 +136,18 @@ y_pred = (y_pred > 0.5)
 from sklearn.preprocessing import LabelEncoder
 label = LabelEncoder()
 y_pred = label.fit_transform(y_pred)
+
+## Fitting XGBoost to the Training set
+#from xgboost import XGBClassifier
+#classifier = XGBClassifier()
+#classifier.fit(X_train, y_train)
+#
+## Predicting the Test set results
+#y_pred = classifier.predict(X_test)
+
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
 
 
 
