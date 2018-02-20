@@ -40,9 +40,60 @@ pred = sc.fit_transform(pred)
 #from sklearn.metrics import confusion_matrix
 #cm = confusion_matrix(y_test, y_pred)
 
-# Fitting SVM to the Training set
-from sklearn.svm import SVC
-classifier = SVC(kernel = 'linear', random_state = 0)
+## Fitting SVM to the Training set
+#from sklearn.svm import SVC
+#classifier = SVC(kernel = 'linear', random_state = 0)
+#classifier.fit(X_train, y_train)
+#
+## Predicting the Test set results
+#y_pred = classifier.predict(X_test)
+#
+## Making the Confusion Matrix
+#from sklearn.metrics import confusion_matrix
+#cm = confusion_matrix(y_test, y_pred)
+#93
+
+## Fitting KSVM to the Training set
+#from sklearn.svm import SVC
+#classifier = SVC(kernel = 'rbf', random_state = 0)
+#classifier.fit(X_train, y_train)
+#
+## Predicting the Test set results
+#y_pred = classifier.predict(X_test)
+#
+## Making the Confusion Matrix
+#from sklearn.metrics import confusion_matrix
+#cm = confusion_matrix(y_test, y_pred)
+
+#
+## Fitting Naive Bayes to the Training set
+#from sklearn.naive_bayes import GaussianNB
+#classifier = GaussianNB()
+#classifier.fit(X_train, y_train)
+#
+## Predicting the Test set results
+#y_pred = classifier.predict(X_test)
+#
+## Making the Confusion Matrix
+#from sklearn.metrics import confusion_matrix
+#cm = confusion_matrix(y_test, y_pred)
+
+## Fitting Decision Tree Classification to the Training set
+#from sklearn.tree import DecisionTreeClassifier
+#classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
+#classifier.fit(X_train, y_train)
+#
+## Predicting the Test set results
+#y_pred = classifier.predict(X_test)
+#
+## Making the Confusion Matrix
+#from sklearn.metrics import confusion_matrix
+#cm = confusion_matrix(y_test, y_pred)
+#93.2
+
+# Fitting Random Forest Classification to the Training set
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators = 300, criterion = 'entropy', random_state = 0)
 classifier.fit(X_train, y_train)
 
 # Predicting the Test set results
@@ -51,5 +102,7 @@ y_pred = classifier.predict(X_test)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+
+
 
 
